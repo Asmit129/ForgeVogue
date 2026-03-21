@@ -47,6 +47,17 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
+// Global Error Handler for generic and Multer exceptions
+app.use((err, req, res, next) => {
+  console.error("Express Error:", err.message);
+  // Specifically intercept Multer size limits or unhandled crashes
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  res.status(statusCode).json({
+    message: err.message || "Internal Server Error",
+    stack: process.env.NODE_ENV === "production" ? null : err.stack,
+  });
+});
+
 // Start server
 const PORT = process.env.PORT || 5000;
 
