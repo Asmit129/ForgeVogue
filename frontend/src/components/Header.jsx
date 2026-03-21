@@ -9,7 +9,7 @@ import api from "../api/axios";
 
 const Header = () => {
   const { user, logout } = useAuth();
-  const { cartItems, setIsCartOpen, clearCart } = useCart();
+  const { cartItems, setIsCartOpen } = useCart();
   const { theme, toggleTheme } = useTheme();
   const { notifications, unreadCount, markAllRead, markOneRead } = useNotifications();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -238,7 +238,7 @@ const Header = () => {
                   Order History
                 </Link>
                 <div className="border-t border-[var(--border-glass)] mt-2 pt-2">
-                  <button onClick={() => { clearCart(); logout(); setDropdownOpen(false); }}
+                  <button onClick={() => { logout(); setDropdownOpen(false); }}
                     className="w-full text-left flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:bg-[var(--glass-light)] transition-colors">
                     <LogOut className="w-4 h-4" /> Sign Out
                   </button>

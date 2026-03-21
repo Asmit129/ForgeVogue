@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from "react";
+import { useAuth } from "./AuthContext";
 
-const CART_KEY = "fv:cart";
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
+  const { user } = useAuth();
+  const cartKey = user && user._id ? `fv:cart_${user._id}` : "fv:cart_guest";
+
   const [cartItems, setCartItems] = useState(() => {
     try {
-      const raw = localStorage.getItem(CART_KEY);
+      const raw = localStorage.getItem(cartKey);
       return raw ? JSON.parse(raw) : [];
     } catch {
       return [];
@@ -15,9 +18,19 @@ export function CartProvider({ children }) {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Sync cart instantly upon account login/logout swap
   useEffect(() => {
-    localStorage.setItem(CART_KEY, JSON.stringify(cartItems));
-  }, [cartItems]);
+    try {
+      const raw = localStorage.getItem(cartKey);
+      setCartItems(raw ? JSON.parse(raw) : []);
+    } catch {
+      setCartItems([]);
+    }
+  }, [cartKey]);
+
+  useEffect(() => {
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
+  }, [cartItems, cartKey]);
 
   const addToCart = (product) => {
     setCartItems((prev) => {
