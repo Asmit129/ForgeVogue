@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import { User, Mail, Lock, Save, Camera, ShieldAlert } from "lucide-react";
+import { User, Mail, Lock, Save, Camera, ShieldAlert, Settings as SettingsIcon } from "lucide-react";
 import api from "../api/axios";
 
 const Settings = () => {
@@ -61,7 +61,7 @@ const Settings = () => {
     <div className="bg-[var(--bg-main)] min-h-screen pt-28 pb-20">
       <div className="wrap max-w-3xl">
         <div className="flex items-center gap-3 mb-10 border-b border-[var(--border-glass)] pb-6">
-          <Settings className="w-8 h-8 text-[var(--accent-gold)]" />
+          <SettingsIcon className="w-8 h-8 text-[var(--accent-gold)]" />
           <div>
             <h1 className="text-3xl font-bold text-[var(--text-main)] outfit-font">Account Configuration</h1>
             <p className="text-sm text-[var(--text-muted)] mt-1">Manage your secure portfolio identity credentials.</p>
