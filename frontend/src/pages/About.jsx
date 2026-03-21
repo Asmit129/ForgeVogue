@@ -14,7 +14,7 @@ const About = () => {
       
       {/* 1. Hero / Manifesto */}
       <section className="relative py-24 md:py-32 overflow-hidden border-b border-[var(--border-glass)]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center bg-no-repeat opacity-[0.15] mix-blend-luminosity"></div>
+        <div className="absolute inset-0 bg-[url('/seed/img_0896ffafdd.jpg')] bg-cover bg-center bg-no-repeat opacity-[0.15] mix-blend-luminosity"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-main)] via-[var(--bg-main)]/80 to-transparent"></div>
         <div className="wrap relative z-10 max-w-4xl text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>

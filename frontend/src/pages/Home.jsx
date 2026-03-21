@@ -332,7 +332,7 @@ const Home = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=2000" 
+            src="/seed/img_ee5c8aa262.jpg" 
             alt="Authentication Process" 
             className="w-full h-full object-cover opacity-20 filter grayscale"
           />
