@@ -4,7 +4,7 @@ import { User, Mail, Lock, Save, Camera, ShieldAlert, Settings as SettingsIcon }
 import api from "../api/axios";
 
 const Settings = () => {
-  const { user, setUser } = useAuth();
+  const { user, updateUser } = useAuth();
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,9 +43,7 @@ const Settings = () => {
         formData.append("email", email);
         if (password) formData.append("password", password);
         formData.append("avatar", avatarFile);
-        const { data } = await api.put("/auth/profile", formData, {
-          headers: { "Content-Type": "multipart/form-data" }
-        });
+        const { data } = await api.put("/auth/profile", formData);
         responseData = data;
       } else {
         const { data } = await api.put("/auth/profile", {
@@ -56,8 +54,7 @@ const Settings = () => {
         responseData = data;
       }
 
-      setUser(responseData);
-      localStorage.setItem("fv:auth", JSON.stringify(responseData));
+      updateUser(responseData);
       setMessage("Configuration updated successfully.");
       setPassword("");
       setConfirmPassword("");
