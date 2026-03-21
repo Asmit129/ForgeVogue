@@ -73,7 +73,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--accent-gold)] to-[var(--accent-gold-dark)] p-1 shadow-[0_0_30px_rgba(var(--gold-rgb),0.2)] shrink-0">
               <img 
-                src={user?.avatar?.startsWith('http') ? user.avatar : `http://localhost:5001${user?.avatar || '/uploads/default-avatar.png'}`} 
+                src={user?.avatar?.startsWith('http') ? user.avatar : (user?.avatar ? `http://localhost:5001${user.avatar}` : `https://ui-avatars.com/api/?name=${user?.name || 'User'}&background=d4af37&color=000`)} 
                 alt="Profile" 
                 className="w-full h-full object-cover rounded-full bg-[var(--bg-black)]/50"
                 onError={(e) => { e.target.src = "https://ui-avatars.com/api/?name=" + user?.name + "&background=d4af37&color=000" }}

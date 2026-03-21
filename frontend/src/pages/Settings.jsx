@@ -42,9 +42,7 @@ const Settings = () => {
       if (password) formData.append("password", password);
       if (avatarFile) formData.append("avatar", avatarFile);
 
-      const { data } = await api.put("/auth/profile", formData, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
+      const { data } = await api.put("/auth/profile", formData);
       setUser(data);
       localStorage.setItem("fv:auth", JSON.stringify(data));
       setMessage("Configuration updated successfully.");
@@ -88,7 +86,7 @@ const Settings = () => {
             <div className="flex flex-col items-center shrink-0">
               <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--accent-gold)] to-[var(--accent-gold-dark)] p-1 shadow-[0_0_20px_rgba(var(--gold-rgb),0.2)] mb-4">
                 <img 
-                  src={previewAvatar || (user?.avatar?.startsWith('http') ? user.avatar : `http://localhost:5001${user?.avatar || '/uploads/default-avatar.png'}`)} 
+                  src={previewAvatar || (user?.avatar?.startsWith('http') ? user.avatar : (user?.avatar ? `http://localhost:5001${user.avatar}` : `https://ui-avatars.com/api/?name=${user?.name || 'User'}&background=d4af37&color=000`))} 
                   alt="Profile" 
                   className="w-full h-full object-cover rounded-full bg-[var(--bg-black)]/50"
                   onError={(e) => { e.target.src = "https://ui-avatars.com/api/?name=" + user?.name + "&background=d4af37&color=000" }}
