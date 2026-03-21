@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 
 const CartPanel = () => {
-  const { isCartOpen, setIsCartOpen, cartItems, addToCart, removeFromCart, clearCart } = useCart();
+  const { isCartOpen, setIsCartOpen, cartItems, addToCart, removeFromCart, clearCart, updateQty } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -109,16 +109,18 @@ const CartPanel = () => {
                           
                           <div className="flex items-center gap-2 bg-[var(--bg-black)] py-1 px-2 rounded-lg border border-[var(--border-glass)]">
                             <button
-                              onClick={() => addToCart(item)}
-                              disabled={item.qty <= 1}
-                              className="text-[var(--text-muted)] hover:text-[var(--text-main)] disabled:opacity-30 p-1"
+                              onClick={() => {
+                                if (item.qty > 1) updateQty(item.product, item.qty - 1);
+                                else removeFromCart(item.product);
+                              }}
+                              className="text-[var(--text-muted)] hover:text-[var(--text-main)] p-1 z-10 relative cursor-pointer"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
                             <span className="text-xs text-[var(--text-main)] font-medium w-4 text-center">{item.qty}</span>
                             <button
-                              disabled
-                              className="text-[var(--text-muted)] opacity-30 cursor-not-allowed p-1"
+                              onClick={() => updateQty(item.product, item.qty + 1)}
+                              className="text-[var(--text-muted)] hover:text-[var(--accent-gold)] transition-colors p-1 z-10 relative cursor-pointer"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
