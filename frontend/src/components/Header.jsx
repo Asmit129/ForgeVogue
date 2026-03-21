@@ -111,14 +111,18 @@ const Header = () => {
 
         {/* RIGHT ACTIONS */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <button onClick={toggleTheme} className="text-[var(--text-soft)] hover:text-[var(--text-main)] transition-colors" aria-label="Toggle Theme">
-            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          <button onClick={toggleTheme} className="relative text-[var(--text-soft)] hover:text-[var(--text-main)] transition-all transform hover:-translate-y-0.5 active:scale-95 group" aria-label="Toggle Theme">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] flex items-center justify-center group-hover:bg-[var(--text-main)]/10 transition-colors shadow-sm">
+              {theme === "dark" ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
+            </div>
           </button>
 
           {/* Search */}
           <div className="relative" ref={searchRef}>
-            <button onClick={() => setSearchOpen(!searchOpen)} className="text-[var(--text-soft)] hover:text-[var(--text-main)] transition-colors">
-              <Search className="w-5 h-5" />
+            <button onClick={() => setSearchOpen(!searchOpen)} className="relative text-[var(--text-soft)] hover:text-[var(--text-main)] transition-all transform hover:-translate-y-0.5 active:scale-95 group" aria-label="Search">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] flex items-center justify-center group-hover:bg-[var(--text-main)]/10 transition-colors shadow-sm">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
             </button>
             {searchOpen && (
               <div className="absolute right-0 top-10 w-72 sm:w-80 bg-[var(--bg-main)] border border-[var(--border-glass)] rounded-xl shadow-2xl z-50 overflow-hidden">
@@ -155,10 +159,12 @@ const Header = () => {
           {user && (
             <div className="relative">
               <button onClick={() => { setNotifOpen(!notifOpen); setDropdownOpen(false); }}
-                className="relative text-[var(--text-soft)] hover:text-[var(--text-main)] transition-colors">
-                <Bell className="w-5 h-5" />
+                className="relative text-[var(--accent-gold)] transition-all transform hover:-translate-y-0.5 active:scale-95 group" aria-label="Notifications">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--accent-gold)]/15 flex items-center justify-center border border-[var(--accent-gold)]/30 group-hover:bg-[var(--accent-gold)]/30 transition-colors shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                  <Bell className="w-4 h-4 sm:w-5 sm:h-5 shadow-sm" />
+                </div>
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border-2 border-[var(--bg-main)] shadow-md">
                     {unreadCount > 9 ? "9+" : unreadCount}
                   </span>
                 )}
@@ -248,8 +254,8 @@ const Header = () => {
           </div>
 
           {/* Cart */}
-          <button onClick={() => setIsCartOpen(true)} className="relative text-[var(--text-soft)] hover:text-[var(--text-main)] transition-colors group" aria-label="Cart">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] flex items-center justify-center group-hover:bg-[var(--accent-gold)]/20 transition-colors">
+          <button onClick={() => setIsCartOpen(true)} className="relative text-[var(--text-soft)] hover:text-[var(--text-main)] transition-all transform hover:-translate-y-0.5 active:scale-95 group" aria-label="Cart">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] flex items-center justify-center group-hover:bg-[var(--accent-gold)]/20 transition-colors shadow-sm">
               <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 group-hover:text-[var(--accent-gold)]" />
             </div>
             {totalItems > 0 && (
