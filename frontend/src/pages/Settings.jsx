@@ -10,6 +10,8 @@ const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [avatarFile, setAvatarFile] = useState(null);
+  const [previewAvatar, setPreviewAvatar] = useState("");
   
   const [message, setMessage] = useState(null);
   const [error, setError] = useState("");
@@ -34,13 +36,17 @@ const Settings = () => {
 
     setLoading(true);
     try {
-      const { data } = await api.put("/auth/profile", {
-        name,
-        email,
-        password: password || undefined,
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      if (password) formData.append("password", password);
+      if (avatarFile) formData.append("avatar", avatarFile);
+
+      const { data } = await api.put("/auth/profile", formData, {
+        headers: { "Content-Type": "multipart/form-data" }
       });
       setUser(data);
-      localStorage.setItem("fv:auth", JSON.stringify({ token: localStorage.getItem("fv:token"), user: data }));
+      localStorage.setItem("fv:auth", JSON.stringify(data));
       setMessage("Configuration updated successfully.");
       setPassword("");
       setConfirmPassword("");
@@ -78,19 +84,25 @@ const Settings = () => {
           )}
 
           <div className="flex flex-col md:flex-row gap-12 relative z-10">
-            {/* Avatar section (visual only for now pending backend upload support for avatars) */}
+            {/* Avatar section */}
             <div className="flex flex-col items-center shrink-0">
               <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[var(--accent-gold)] to-[var(--accent-gold-dark)] p-1 shadow-[0_0_20px_rgba(var(--gold-rgb),0.2)] mb-4">
                 <img 
-                  src={user?.avatar?.startsWith('http') ? user.avatar : `http://localhost:5001${user?.avatar || '/uploads/default-avatar.png'}`} 
+                  src={previewAvatar || (user?.avatar?.startsWith('http') ? user.avatar : `http://localhost:5001${user?.avatar || '/uploads/default-avatar.png'}`)} 
                   alt="Profile" 
                   className="w-full h-full object-cover rounded-full bg-[var(--bg-black)]/50"
                   onError={(e) => { e.target.src = "https://ui-avatars.com/api/?name=" + user?.name + "&background=d4af37&color=000" }}
                 />
               </div>
-              <button disabled className="text-xs text-[var(--text-muted)] uppercase tracking-widest flex items-center gap-1 opacity-50 cursor-not-allowed border border-[var(--border-glass)] rounded-full px-4 py-1.5">
+              <input type="file" id="avatarUpload" className="hidden" accept="image/*" onChange={(e) => {
+                if (e.target.files[0]) {
+                  setAvatarFile(e.target.files[0]);
+                  setPreviewAvatar(URL.createObjectURL(e.target.files[0]));
+                }
+              }} />
+              <label htmlFor="avatarUpload" className="text-xs text-[var(--accent-gold)] hover:text-[var(--accent-gold-hover)] uppercase tracking-widest flex items-center gap-1 cursor-pointer border border-[var(--accent-gold)]/50 hover:bg-[var(--accent-gold)]/10 rounded-full px-4 py-1.5 transition-colors">
                 <Camera className="w-3 h-3" /> Update Image
-              </button>
+              </label>
             </div>
 
             <form onSubmit={submitHandler} className="flex-1 space-y-6">

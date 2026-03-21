@@ -239,6 +239,10 @@ const Header = () => {
                   className="block px-4 py-2 text-sm text-[var(--text-soft)] hover:bg-[var(--glass-light)] hover:text-[var(--text-main)] transition-colors">
                   My Collection
                 </Link>
+                <Link to="/settings" onClick={() => setDropdownOpen(false)}
+                  className="block px-4 py-2 text-sm text-[var(--text-soft)] hover:bg-[var(--glass-light)] hover:text-[var(--text-main)] transition-colors">
+                  Configuration
+                </Link>
                 <Link to="/my-orders" onClick={() => setDropdownOpen(false)}
                   className="block px-4 py-2 text-sm text-[var(--text-soft)] hover:bg-[var(--glass-light)] hover:text-[var(--text-main)] transition-colors">
                   Order History

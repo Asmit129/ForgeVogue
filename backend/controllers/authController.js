@@ -93,6 +93,10 @@ export const updateProfile = async (req, res) => {
     if (req.body.password) {
       user.password = req.body.password;
     }
+    
+    if (req.file) {
+      user.avatar = `/uploads/${req.file.filename}`;
+    }
 
     const updatedUser = await user.save();
 
