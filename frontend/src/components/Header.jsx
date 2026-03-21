@@ -84,7 +84,7 @@ const Header = () => {
           </button>
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <img src="/logo.png" alt="FV" className="h-8 w-8 sm:h-10 sm:w-10 object-contain rounded-full shadow-[0_0_10px_rgba(var(--gold-rgb),0.4)]" />
-            <span className="text-xl sm:text-2xl font-bold text-[var(--text-main)] tracking-tight outfit-font">
+            <span className="block md:hidden lg:block text-xl sm:text-2xl font-bold text-[var(--text-main)] tracking-tight outfit-font">
               Forge<span className="font-light text-[var(--text-soft)]">Vogue</span>
             </span>
           </Link>
