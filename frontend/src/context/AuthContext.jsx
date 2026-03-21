@@ -44,6 +44,7 @@ export function AuthProvider({ children }) {
       const { data } = await API.post("/auth/login", { email, password });
       setUser(data);
       localStorage.setItem("fv:auth", JSON.stringify(data));
+      API.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       return { success: true, data };
     } catch (err) {
       return {
@@ -65,6 +66,7 @@ export function AuthProvider({ children }) {
       });
       setUser(data);
       localStorage.setItem("fv:auth", JSON.stringify(data));
+      API.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       return { success: true, data };
     } catch (err) {
       return {

@@ -3,7 +3,7 @@ import User from "../models/User.js";
 import Product from "../models/Product.js";
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+  return jwt.sign({ id: id.toString() }, process.env.JWT_SECRET, { expiresIn: "30d" });
 };
 
 // @desc    Register a new user

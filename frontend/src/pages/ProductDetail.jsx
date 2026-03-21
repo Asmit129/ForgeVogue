@@ -216,7 +216,7 @@ const ProductDetail = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <button onClick={() => { addToCart({ product: product._id, title: product.title, price: product.price, image: product.images?.[0], qty: 1 }); }}
+              <button onClick={() => { addToCart(product); }}
                 className="flex-1 btn btn--gold py-3.5 rounded-xl flex items-center justify-center gap-2 font-semibold">
                 <ShoppingCart className="w-5 h-5" /> Add to Vault
               </button>
