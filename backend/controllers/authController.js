@@ -88,10 +88,11 @@ export const updateProfile = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    user.name = req.body.name || user.name;
-    user.email = req.body.email || user.email;
-    if (req.body.password) {
-      user.password = req.body.password;
+    const body = req.body || {};
+    user.name = body.name || user.name;
+    user.email = body.email || user.email;
+    if (body.password) {
+      user.password = body.password;
     }
     
     if (req.file) {

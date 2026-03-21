@@ -36,15 +36,28 @@ const Settings = () => {
 
     setLoading(true);
     try {
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      if (password) formData.append("password", password);
-      if (avatarFile) formData.append("avatar", avatarFile);
+      let responseData;
+      if (avatarFile) {
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        if (password) formData.append("password", password);
+        formData.append("avatar", avatarFile);
+        const { data } = await api.put("/auth/profile", formData, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
+        responseData = data;
+      } else {
+        const { data } = await api.put("/auth/profile", {
+          name,
+          email,
+          password: password || undefined
+        });
+        responseData = data;
+      }
 
-      const { data } = await api.put("/auth/profile", formData);
-      setUser(data);
-      localStorage.setItem("fv:auth", JSON.stringify(data));
+      setUser(responseData);
+      localStorage.setItem("fv:auth", JSON.stringify(responseData));
       setMessage("Configuration updated successfully.");
       setPassword("");
       setConfirmPassword("");
