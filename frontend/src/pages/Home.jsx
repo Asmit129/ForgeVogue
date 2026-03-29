@@ -392,7 +392,7 @@ const Home = () => {
             Join thousands of elite collectors selling authenticated sneakers, watches, and art through ForgeVogue securely and privately.
           </p>
           <MagneticWrapper>
-            <Link to="/sell" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--bg-black)] text-white rounded-full font-bold text-lg hover:bg-[var(--bg-black-hover)] hover:scale-105 transition-all shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+            <Link to="/sell" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white rounded-full font-bold text-lg hover:bg-zinc-900 hover:scale-105 transition-all shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
               Start Selling Today <ArrowRight className="w-5 h-5" />
             </Link>
           </MagneticWrapper>

@@ -11,9 +11,7 @@ const Footer = () => {
           {/* Brand Col */}
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--accent-gold)] to-[var(--accent-gold-dark)] flex items-center justify-center">
-                <span className="text-[var(--text-black)] font-black outfit-font text-lg tracking-tighter">FV</span>
-              </div>
+              <img src="/logo.png" alt="FV" className="h-8 w-8 sm:h-10 sm:w-10 object-contain rounded-full shadow-[0_0_10px_rgba(var(--gold-rgb),0.4)]" />
               <span className="text-xl sm:text-2xl font-bold text-[var(--text-main)] tracking-tight outfit-font">
                 Forge<span className="font-light text-[var(--text-muted)]">Vogue</span>
               </span>
