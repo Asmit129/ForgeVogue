@@ -4,10 +4,10 @@ import { ShieldCheck, Lock, Globe, Instagram, Twitter, Mail, Phone } from 'lucid
 
 const Footer = () => {
   return (
-    <footer className="bg-[#050505] border-t border-[var(--border-glass)] pt-12 sm:pt-16 pb-8 text-[var(--text-muted)]">
+    <footer className="bg-[var(--bg-main)] border-t border-[var(--border-glass)] pt-12 sm:pt-16 pb-8 text-[var(--text-muted)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
-          
+
           {/* Brand Col */}
           <div className="col-span-2 sm:col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6">
@@ -25,7 +25,7 @@ const Footer = () => {
               <a href="https://instagram.com/asmit.kumar05" target="_blank" rel="noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] border border-[var(--border-glass)] flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-[var(--text-black)] transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] border border-[var(--border-glass)] flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-[var(--text-black)] transition-all">
+              <a href="https://x.com/AsmitK005" target="_blank" rel="noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] border border-[var(--border-glass)] flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-[var(--text-black)] transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
               <a href="mailto:asmitk983@gmail.com" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--glass-light)] border border-[var(--border-glass)] flex items-center justify-center hover:bg-[var(--accent-gold)] hover:text-[var(--text-black)] transition-all">

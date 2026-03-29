@@ -113,12 +113,12 @@ const Store = () => {
                 placeholder="Search collection..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-[#18181b] border border-[var(--border-glass)] rounded-full py-2.5 pl-10 pr-4 text-sm text-[var(--text-main)] placeholder-gray-500 focus:outline-none focus:border-[var(--accent-gold)] focus:ring-1 focus:ring-[var(--accent-gold)] transition-all"
+                className="w-full bg-[var(--glass-light)] border border-[var(--border-glass)] rounded-full py-2.5 pl-10 pr-4 text-sm text-[var(--text-main)] placeholder-gray-500 focus:outline-none focus:border-[var(--accent-gold)] focus:ring-1 focus:ring-[var(--accent-gold)] transition-all"
               />
             </form>
             <button 
               onClick={() => setShowFilters(!showFilters)}
-              className="md:hidden flex items-center justify-center gap-2 bg-[#18181b] border border-[var(--border-glass)] rounded-full py-2.5 px-6 text-sm text-[var(--text-main)] hover:bg-[var(--glass-light)] transition-colors"
+              className="md:hidden flex items-center justify-center gap-2 bg-[var(--glass-light)] border border-[var(--border-glass)] rounded-full py-2.5 px-6 text-sm text-[var(--text-main)] hover:bg-[var(--glass-light)] transition-colors"
             >
               <SlidersHorizontal className="w-4 h-4" /> Filters
             </button>
@@ -199,7 +199,7 @@ const Store = () => {
               </div>
 
               {/* Authenticity Guarantee */}
-              <div className="bg-[#18181b] border border-[var(--accent-gold)]/20 rounded-xl p-5 mt-8">
+              <div className="bg-[var(--glass-light)] border border-[var(--accent-gold)]/20 rounded-xl p-5 mt-8">
                 <ShieldCheck className="w-8 h-8 text-[var(--accent-gold)] mb-3" />
                 <h4 className="text-[var(--text-main)] font-medium text-sm mb-2">Verified Authentic</h4>
                 <p className="text-xs text-[var(--text-muted)] leading-relaxed">

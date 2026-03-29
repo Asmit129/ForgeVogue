@@ -107,7 +107,7 @@ const SellerProfile = () => {
             {products.map((product) => (
               <Link key={product._id} to={`/product/${product._id}`} className="glass-card bg-[var(--bg-card)] border-[var(--border-glass)] overflow-hidden flex flex-col group hover:border-[var(--accent-gold)]/50 transition-colors">
                 <div className="relative aspect-square bg-[var(--bg-black)]/50 overflow-hidden">
-                  <div className="absolute top-3 left-3 z-10 bg-[var(--bg-black)]/60 backdrop-blur px-2.5 py-1 rounded text-[10px] font-bold text-[var(--text-main)] uppercase tracking-wider border border-[var(--border-glass)]">
+                  <div className="absolute top-3 left-3 z-10 bg-[var(--bg-card)]/60 backdrop-blur px-2.5 py-1 rounded text-[10px] font-bold text-[var(--text-main)] uppercase tracking-wider border border-[var(--border-glass)]">
                     {product.category}
                   </div>
                   <img 

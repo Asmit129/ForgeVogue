@@ -148,7 +148,7 @@ const SellItem = () => {
                         <div className="relative w-full h-full rounded-xl overflow-hidden">
                           <img src={imagePreview} alt="Preview" className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
                           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span className="bg-[var(--bg-black)]/80 text-[var(--text-main)] text-sm font-medium px-4 py-2 rounded-full backdrop-blur-md">Replace Image</span>
+                            <span className="bg-[var(--bg-card)]/80 text-[var(--text-main)] text-sm font-medium px-4 py-2 rounded-full backdrop-blur-md">Replace Image</span>
                           </div>
                         </div>
                       ) : (

@@ -210,7 +210,7 @@ const Home = () => {
       </section>
 
       {/* 4. FEATURED GRAILS */}
-      <section className="section bg-gradient-to-b from-[var(--bg-main)] to-[#121217] relative">
+      <section className="section bg-gradient-to-b from-[var(--bg-main)] to-[var(--bg-card)] relative">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--accent-gold)]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
 
@@ -392,7 +392,7 @@ const Home = () => {
             Join thousands of elite collectors selling authenticated sneakers, watches, and art through ForgeVogue securely and privately.
           </p>
           <MagneticWrapper>
-            <Link to="/sell" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--bg-black)] text-[var(--text-main)] rounded-full font-bold text-lg hover:bg-[var(--bg-black-hover)] hover:scale-105 transition-all shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+            <Link to="/sell" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--bg-black)] text-white rounded-full font-bold text-lg hover:bg-[var(--bg-black-hover)] hover:scale-105 transition-all shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
               Start Selling Today <ArrowRight className="w-5 h-5" />
             </Link>
           </MagneticWrapper>

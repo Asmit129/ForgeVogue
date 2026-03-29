@@ -67,7 +67,7 @@ const About = () => {
       </section>
 
       {/* 3. Global Network & Stats */}
-      <section className="py-24 bg-[var(--bg-black)] border-y border-[var(--border-glass)] relative">
+      <section className="py-24 bg-[var(--bg-card)] border-y border-[var(--border-glass)] relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none"></div>
         <div className="wrap relative z-10 flex flex-col lg:flex-row items-center gap-16">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex-1">

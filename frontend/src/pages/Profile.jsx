@@ -253,7 +253,7 @@ const Profile = () => {
               <div>
                 <h3 className="text-xl font-bold text-[var(--text-main)] outfit-font mb-4 flex items-center gap-2"><Handshake className="w-5 h-5 text-[var(--accent-gold)]" /> Incoming Proposals</h3>
                 {receivedOffers.length === 0 ? (
-                  <div className="bg-[var(--bg-black)]/20 border border-[var(--border-glass)] rounded-xl p-6 text-center text-sm text-[var(--text-muted)]">
+                  <div className="bg-[var(--bg-card)]/20 border border-[var(--border-glass)] rounded-xl p-6 text-center text-sm text-[var(--text-muted)]">
                     No binding offers received on your assets.
                   </div>
                 ) : (
@@ -293,7 +293,7 @@ const Profile = () => {
               <div>
                 <h3 className="text-xl font-bold text-[var(--text-main)] outfit-font mb-4 flex items-center gap-2"><Briefcase className="w-5 h-5 text-[var(--accent-gold)]" /> Your Sent Proposals</h3>
                 {myOffers.length === 0 ? (
-                  <div className="bg-[var(--bg-black)]/20 border border-[var(--border-glass)] rounded-xl p-6 text-center text-sm text-[var(--text-muted)]">
+                  <div className="bg-[var(--bg-card)]/20 border border-[var(--border-glass)] rounded-xl p-6 text-center text-sm text-[var(--text-muted)]">
                     You have not submitted any private offers.
                   </div>
                 ) : (
