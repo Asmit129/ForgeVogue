@@ -122,7 +122,7 @@ const SellerProfile = () => {
                     {product.title}
                   </h3>
                   <div className="mt-auto flex justify-between items-end">
-                    <span className="font-mono font-bold text-[var(--text-main)] text-lg">${product.price.toLocaleString()}</span>
+                    <span className="font-mono font-bold text-[var(--text-main)] text-lg">₹{product.price.toLocaleString()}</span>
                   </div>
                 </div>
               </Link>

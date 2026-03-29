@@ -22,15 +22,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Middleware
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve uploaded images
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
@@ -42,15 +39,12 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/coupons", couponRoutes);
 
-// Health check
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
-// Global Error Handler for generic and Multer exceptions
 app.use((err, req, res, next) => {
   console.error("Express Error:", err.message);
-  // Specifically intercept Multer size limits or unhandled crashes
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   res.status(statusCode).json({
     message: err.message || "Internal Server Error",
@@ -58,7 +52,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
 const PORT = process.env.PORT || 5000;
 
 connectDB().then(() => {

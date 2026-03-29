@@ -298,7 +298,7 @@ const Home = () => {
                         <div>
                           <p className="text-sm text-[var(--text-muted)] mb-1">Current Value</p>
                           <p className="text-xl font-bold text-[var(--text-main)] font-mono">
-                            ${p.price.toLocaleString()}
+                            ₹{p.price.toLocaleString()}
                           </p>
                         </div>
                         <button 

@@ -226,7 +226,7 @@ const AdminDashboard = () => {
                       <span className="flex items-center gap-1 text-xs font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded-full"><TrendingUp className="w-3 h-3"/> +12.5%</span>
                     </div>
                     <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] font-bold mb-1">Total Escrow Volume</p>
-                    <h3 className="text-3xl font-mono font-bold text-[var(--text-main)]">${analytics.totalVolume?.toLocaleString()}</h3>
+                    <h3 className="text-3xl font-mono font-bold text-[var(--text-main)]">₹{analytics.totalVolume?.toLocaleString()}</h3>
                   </div>
 
                   <div className="bg-[var(--bg-main)] border border-[var(--border-glass)] rounded-2xl p-6 shadow-inner relative overflow-hidden group">
@@ -248,7 +248,7 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] font-bold mb-1">Platform Commission (8%)</p>
-                    <h3 className="text-3xl font-mono font-bold text-[var(--accent-gold)]">${analytics.totalRevenue?.toLocaleString()}</h3>
+                    <h3 className="text-3xl font-mono font-bold text-[var(--accent-gold)]">₹{analytics.totalRevenue?.toLocaleString()}</h3>
                   </div>
                 </div>
 
@@ -460,7 +460,7 @@ const AdminDashboard = () => {
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex flex-col gap-1">
-                            <span className="font-mono font-medium text-[var(--accent-gold)]">${o.amount.toLocaleString()}</span>
+                            <span className="font-mono font-medium text-[var(--accent-gold)]">₹{o.amount.toLocaleString()}</span>
                             <span className="text-[10px] text-[var(--text-muted)]">From: {o.buyer?.email}</span>
                             <span className="text-[10px] text-[var(--text-muted)]">To: {o.seller?.email}</span>
                           </div>

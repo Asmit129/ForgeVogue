@@ -296,7 +296,7 @@ const Store = () => {
                         <div className="mt-auto pt-4 flex items-end justify-between">
                           <div>
                             <p className="text-xs text-[var(--text-muted)] mb-0.5">Valuation</p>
-                            <p className="text-lg font-bold font-mono text-[var(--text-main)]">${(p.price || 0).toLocaleString()}</p>
+                            <p className="text-lg font-bold font-mono text-[var(--text-main)]">₹{(p.price || 0).toLocaleString()}</p>
                           </div>
                           <button 
                             onClick={(e) => {

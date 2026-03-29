@@ -198,7 +198,7 @@ const SellItem = () => {
                        <div>
                         <label className="text-xs uppercase tracking-widest text-[var(--text-muted)] mb-2 block">Proposed Valuation (USD)</label>
                         <div className="relative">
-                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] font-mono">$</span>
+                          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] font-mono">₹</span>
                           <input
                             type="number"
                             name="price"

@@ -188,7 +188,7 @@ const Profile = () => {
                         {product.title}
                       </h3>
                       <div className="mt-auto flex justify-between items-center text-sm">
-                        <span className="font-mono font-bold text-[var(--accent-gold)]">${product.price.toLocaleString()}</span>
+                        <span className="font-mono font-bold text-[var(--accent-gold)]">₹{product.price.toLocaleString()}</span>
                         {product.status === 'verified' && (
                           <Link to={`/product/${product._id}`} className="text-xs text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">
                             View Listing
@@ -239,7 +239,7 @@ const Profile = () => {
                         {product.title}
                       </h3>
                       <div className="mt-auto">
-                        <span className="font-mono font-bold text-[var(--text-main)]">${product.price.toLocaleString()}</span>
+                        <span className="font-mono font-bold text-[var(--text-main)]">₹{product.price.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
@@ -266,7 +266,7 @@ const Profile = () => {
                           </Link>
                           <div>
                             <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-widest leading-none mb-1">On: {offer.product.title}</p>
-                            <p className="font-mono text-lg font-bold text-[var(--accent-gold)] leading-none mb-2">${offer.amount.toLocaleString()}</p>
+                            <p className="font-mono text-lg font-bold text-[var(--accent-gold)] leading-none mb-2">₹{offer.amount.toLocaleString()}</p>
                             <p className="text-xs text-[var(--text-soft)] font-medium">From: {offer.buyer.email}</p>
                             {offer.message && <div className="mt-2 text-xs italic text-[var(--text-muted)] bg-white/5 p-2 rounded border-l-2 border-[var(--accent-gold)]">"{offer.message}"</div>}
                           </div>
