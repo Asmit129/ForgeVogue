@@ -70,10 +70,8 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-      scrolled 
-        ? "bg-[var(--bg-main)]/90 backdrop-blur-xl border-[var(--border-glass)] shadow-[0_4px_30px_rgba(0,0,0,0.5)]" 
-        : "bg-transparent border-transparent"
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 border-b bg-[var(--bg-main)]/90 backdrop-blur-xl border-[var(--border-glass)] ${
+      scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-0" : "py-1"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
         

@@ -78,7 +78,7 @@ const Home = () => {
               className="object-cover w-full h-full scale-105"
             />
             {/* Dark glass overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 backdrop-blur-[2px]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/60 backdrop-blur-[2px]"></div>
           </div>
         ))}
 
@@ -93,10 +93,10 @@ const Home = () => {
             <span className="inline-block py-1 px-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-[var(--accent-gold)] text-sm font-semibold tracking-widest uppercase mb-6 shadow-xl">
               {heroSlides[currentSlide].subtitle}
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg mb-6 outfit-font leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] mb-6 outfit-font leading-tight">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-lg md:text-xl text-[var(--text-soft)] drop-shadow-md max-w-2xl mx-auto mb-10 font-light">
+            <p className="text-lg md:text-xl text-gray-200 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-2xl mx-auto mb-10 font-light">
               {heroSlides[currentSlide].desc}
             </p>
 
@@ -107,7 +107,7 @@ const Home = () => {
               </div>
               <input
                 type="text"
-                className="w-full bg-[var(--glass-medium)] backdrop-blur-md border border-[var(--border-glass-strong)] rounded-full py-4 pl-12 pr-32 text-[var(--text-main)] placeholder-gray-400 focus:outline-none focus:border-[var(--accent-gold)] focus:ring-1 focus:ring-[var(--accent-gold)] transition-all"
+                className="w-full bg-[var(--glass-medium)] backdrop-blur-md border border-white/20 rounded-full py-4 pl-12 pr-32 text-white placeholder-gray-300 focus:outline-none focus:border-[var(--accent-gold)] focus:ring-1 focus:ring-[var(--accent-gold)] transition-all"
                 placeholder="Search Rolex, Jordan 1, Banksy..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
